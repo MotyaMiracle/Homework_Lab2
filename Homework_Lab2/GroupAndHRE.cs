@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace Homework_Lab2
 {
-    /// <summary>
-    /// Класс, реализующий группу студентов
-    /// </summary>
     public class Group
     {
         private string namegroup;
@@ -20,13 +17,11 @@ namespace Homework_Lab2
             lecturer.SetGroup(this);
             this.lecturer = lecturer;
         }
-        // Добавить студента в группу
         public void AddStudent(Student student)
         {
             this.students.Add(student);
             student.group = this;
         }
-        // Ввод названия группы и закрепление группы за студентами
         public string NameGroup
         {
             get
@@ -39,7 +34,6 @@ namespace Homework_Lab2
                 foreach (Student student in students) student.group = this;
             }
         }
-        // Получить количество студентов
         public int GetNumberOfStudents()
         {
             return (this.students.Count);
@@ -57,36 +51,32 @@ namespace Homework_Lab2
             catch { }
         }
     }
-    /// <summary>
-    /// Класс Кадровик, унаследованный от работника
-    /// </summary>
     public class HRE : Employee
     {
         public HRE(string surname, string name, string lastname) : base(surname, name, lastname, "Кадровик")
         {
 
         }
-        // Добавить студента в группу
         public void AddStudent(Group group, Student student)
         {
             group.AddStudent(student);
         }
-        // Создать студента и добавить ФИО
         public Student MakeStudent(string surname, string name, string lastname)
         {
             return (new Student(surname, name, lastname));
         }
-        // Создать группу
         public Group MakeGroup()
         {
             return (new Group());
         }
-        // Создать преподавателя
-        public Lecturer MakeLecturer(string surname, string name, string lastname)
+        public Lecturer MakeLecturer(string surname, string name, string lastname, bool experience)
         {
-            return (new Lecturer(surname, name, lastname));
+            if (experience)
+            {
+                return (new Lecturer(surname, name, lastname, Lecturer.PAW.HighestLecturer));
+            }
+            else return (new Lecturer(surname, name, lastname, Lecturer.PAW.Assistant));
         }
-        // Создать должность
         public LecturerPAW MakePost()
         {
             return (new LecturerPAW());

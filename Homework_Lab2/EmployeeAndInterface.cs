@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Homework_Lab2
 {
-    // Интерфейс, объявляющий Имя, Фамилию, Отчество, Инициалы и Должность
     interface IEmployeeInterface
     {
         string isurname { get; set; }
@@ -34,7 +33,6 @@ namespace Homework_Lab2
             string initials = isurname + " " + iname + " " + ilastname;
             return initials;
         }
-        // Метод, возвращающий должность
         public string GetPAW()
         {
             return this.iPAW;
