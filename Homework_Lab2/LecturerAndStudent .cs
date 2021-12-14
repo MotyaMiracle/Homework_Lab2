@@ -55,9 +55,9 @@ namespace Homework_Lab2
             lecturerPAW.UpTeacherData();
         }
     }
-    public class Student : Employee
+    public class Student : Human
     {
-        public Student(string surname, string name, string lastname) : base(surname, name, lastname, "Студент")
+        public Student(string surname, string name, string lastname) : base(surname, name, lastname)
         {
 
         }

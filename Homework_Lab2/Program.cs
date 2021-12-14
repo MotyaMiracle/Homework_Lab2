@@ -18,9 +18,9 @@ namespace Homework_Lab2
             Console.WriteLine($"ФИО: {hre.GetInitials()} | Должность: {hre.GetPAW()}");
             Console.WriteLine($"ФИО: {lecturer.GetInitials()} | Должность: {lecturer.GetPAW()}");
             Console.WriteLine($"ФИО: {lecturer1.GetInitials()} | Должность: {lecturer1.GetPAW()}");
-            Console.WriteLine($"ФИО: {student1.GetInitials()} | Должность: {student1.GetPAW()}");
-            Console.WriteLine($"ФИО: {student2.GetInitials()} | Должность: {student2.GetPAW()}");
-            Console.WriteLine($"ФИО: {student3.GetInitials()} | Должность: {student3.GetPAW()}");
+            Console.WriteLine($"ФИО: {student1.GetInitials()}");
+            Console.WriteLine($"ФИО: {student2.GetInitials()}");
+            Console.WriteLine($"ФИО: {student3.GetInitials()}");
             Group group = hre.MakeGroup();
             group.NameGroup = "2-1П11";
             group.SetLecturer(lecturer);
